@@ -1,9 +1,8 @@
-from itertools import combinations
-
-
 def solution(args):
-    for number_set in combinations(args[0], 2):
-        if sum(number_set) == args[1]:
-            first_index = args[0].index(number_set[0])
-            second_index = args[0].index(number_set[1])
+    number_map = {args[0][i]: i for i in range(len(args[0]))}
+    for k in number_map:
+        half_num = args[1] - k
+        if number_map.get(half_num):
+            first_index = number_map[k]
+            second_index = number_map[half_num]
             return first_index, second_index
