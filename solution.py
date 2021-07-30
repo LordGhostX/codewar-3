@@ -1,5 +1,5 @@
-def solution(array_of_integers, integer):
-    for i, j in enumerate(array_of_integers):
-        for k, l in enumerate(array_of_integers):
-            if j + l == integer:
+def solution(args):
+    for i, j in enumerate(args[0]):
+        for k, l in enumerate(args[0]):
+            if j + l == args[1]:
                 return i, k
