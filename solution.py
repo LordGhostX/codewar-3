@@ -1,6 +1,12 @@
 def solution(args):
+    # generate a map of the numbers in the input
+    # the values become the keys and the index become the values
     number_map = {args[0][i]: i for i in range(len(args[0]))}
+
+    # iterate through the keys in the number map
     for k in number_map:
+        # to find a sum, check if the half sum is also a key in the map
+        # runtime ~ O(n), where n = the length of the input array
         half_num = args[1] - k
         if number_map.get(half_num):
             first_index = number_map[k]
